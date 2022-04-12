@@ -1,10 +1,10 @@
-import {MigrationInterface, QueryRunner, Table, TableForeignKey} from "typeorm";
+import {MigrationInterface, QueryRunner, Table} from "typeorm";
 
-export class CreateProductsTable1649797125544 implements MigrationInterface {
+export class CreateExtrasTable1649797528619 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(new Table({
-            name: 'products',
+            name: 'extras',
             columns: [
                 {
                     name: 'id',
@@ -12,21 +12,9 @@ export class CreateProductsTable1649797125544 implements MigrationInterface {
                     isPrimary: true,
                 },
                 {
-                    name: 'id_restaurant',
-                    type: 'uuid',
-                },
-                {
                     name: 'name',
                     type: 'varchar',
                     isUnique: true
-                },
-                {
-                    name: 'url_image',
-                    type: 'varchar',
-                },
-                {
-                    name: 'description',
-                    type: 'varchar',
                 },
                 {
                     name: 'price',
@@ -44,18 +32,10 @@ export class CreateProductsTable1649797125544 implements MigrationInterface {
                 }
             ]
         }));
-
-        await queryRunner.createForeignKey('products', new TableForeignKey({
-            name: 'fk_products_restaurants',
-            columnNames: ['id_restaurant'],
-            referencedColumnNames: ['id'],
-            referencedTableName: 'restaurants',
-        }));
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropForeignKey('products', 'fk_products_restaurants');
-        await queryRunner.dropTable('products');
+        await queryRunner.dropTable('extras');
     }
 
 }
