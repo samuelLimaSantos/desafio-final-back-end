@@ -1,6 +1,7 @@
 import { ApiTags } from '@nestjs/swagger';
-import { Controller, HttpCode, HttpStatus, Post } from "@nestjs/common";
+import { Body, Controller, HttpCode, HttpStatus, Post } from "@nestjs/common";
 import { CreateProductService } from './createProduct.service';
+import { CreateProductDto } from './../../dtos/createProduct.dto';
 
 @ApiTags('products')
 @Controller('products')
@@ -11,7 +12,9 @@ export class CreateProductController {
 
   @Post()
   @HttpCode(HttpStatus.CREATED)
-  async createProduct() {
-    await this.createProductService.execute();
+  async createProduct(
+    @Body() createProductDto: CreateProductDto
+  ) {
+    await this.createProductService.execute(createProductDto);
   }
 }
