@@ -3,7 +3,7 @@ import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateCol
 @Entity('restaurants')
 export class Restaurants {
   @PrimaryGeneratedColumn('uuid')
-  id: string
+  id: string;
 
   @Column()
   name: string;
