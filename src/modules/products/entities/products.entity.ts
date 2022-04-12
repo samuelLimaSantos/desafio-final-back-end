@@ -1,4 +1,6 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, JoinColumn, JoinTable, ManyToMany, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Restaurants } from './../../restaurants/entities/restaurants.entity';
+import { Extras } from './extras.entity';
 
 @Entity('products')
 export class Products {
@@ -20,4 +22,28 @@ export class Products {
 
   @Column()
   price: number;
+
+  @CreateDateColumn()
+  created_at: Date;
+
+  @UpdateDateColumn()
+  updated_at: Date;
+
+  @ManyToOne(() => Restaurants, restaurants => restaurants.products)
+  @JoinColumn()
+  restaurant: Restaurants;
+
+  @ManyToMany(() => Extras, extras => extras.products)
+  @JoinTable({
+    name: 'products_extras',
+    joinColumn: {
+      name: 'id_product',
+      referencedColumnName: 'id',
+    },
+    inverseJoinColumn: {
+      name: 'id_extra',
+      referencedColumnName: 'id',
+    },
+  })
+  extras: Extras[];
 }
