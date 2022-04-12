@@ -12,6 +12,7 @@ const configuration = () => ({
     password: process.env.DB_PASS,
     database: process.env.DB_NAME,
     synchronize: true,
+    autoLoadEntities: true,
     migrationsTableName: 'migrations',
   } as TypeOrmModuleOptions
 })
