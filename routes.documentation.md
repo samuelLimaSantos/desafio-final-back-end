@@ -5,7 +5,7 @@
 - Listar restaurantes
 
 ```http
-  /restaurants
+  rest/restaurants
 ```
 
 Vai retornar =>
@@ -13,10 +13,10 @@ Vai retornar =>
 ```json
 [
   {
-    "id": "string" | "number",
+    "id": "string",
     "name": "string",
     "address": "string",
-    "urlLogo": "string",
+    "urlLogo": "string"
   }
 ]
 ```
@@ -24,12 +24,12 @@ Vai retornar =>
 - Listar produtos de um restaurante (contem dados do restaurante tbm)
 
 ```http
-  /restaurants/:id
+  rest/restaurants/:id
 ```
 
 ```json
 {
-  "id": "string" | "number",
+  "id": "string",
   "name": "string",
   "address": "string",
   "urlLogo": "string",
@@ -38,7 +38,7 @@ Vai retornar =>
   "responsible": "string",
   "products": [
     {
-      "id": "string" | "number",
+      "id": "string",
       "name": "string",
       "urlImage": "string",
       "description": "string",
@@ -58,5 +58,54 @@ Vai retornar =>
 ## Post
 
 - Criar um restaurante
+
+```http
+  rest/restaurants
+```
+
+```json
+{
+  "name": "string",
+  "address": "string",
+  "urlLogo": "string",
+  "urlCover": "string",
+  "description": "string",
+  "responsible": "string"
+}
+```
+
 - Criar produto para um restaurante
+
+```http
+  rest/products/:id
+```
+
+```json
+{
+  "name": "string",
+  "urlImage": "string",
+  "description": "string",
+  "price": "number",
+  "extras": [
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    }
+  ]
+}
+```
+
 - Criar extra
+
+```http
+  rest/products/extras
+```
+
+```json
+{
+  "name": "string",
+  "price": "number"
+}
+```
