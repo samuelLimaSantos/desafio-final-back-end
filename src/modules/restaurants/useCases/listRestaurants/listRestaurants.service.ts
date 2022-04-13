@@ -13,6 +13,9 @@ export class ListRestaurantsService {
   async execute() {
     return await this.restaurantsRepository.find({
       select: ['id', 'name', 'address', 'urlLogo'],
+      order: {
+        name: 'ASC'
+      }
     });
   }
 }
