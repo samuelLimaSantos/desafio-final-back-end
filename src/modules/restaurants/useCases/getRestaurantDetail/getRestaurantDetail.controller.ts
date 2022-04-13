@@ -11,7 +11,7 @@ export class GetRestaurantDetailController {
   ) {}
 
   @Get('/:id')
-  async getRestaurantDetail(@Param('id') restaurantId: number) {
+  async getRestaurantDetail(@Param('id') restaurantId: string) {
     return await this.getRestaurantDetailService.execute(restaurantId);
   }
 }
