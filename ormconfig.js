@@ -11,5 +11,11 @@ module.exports = {
   cli: {
     entitiesDir: 'src',
     migrationsDir: 'src/shared/infra/migrations',
+  },
+  ssl: true,
+  extra: {
+    ssl: {
+      rejectUnauthorized: false
+    }
   }
 }
