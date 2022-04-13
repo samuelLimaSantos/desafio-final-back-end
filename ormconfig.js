@@ -17,5 +17,11 @@ module.exports = {
     ssl: {
       rejectUnauthorized: false
     }
+  },
+  production: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false
+    },
   }
 }
