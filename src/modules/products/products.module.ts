@@ -16,7 +16,7 @@ import { ProductsExtras } from "./entities/productsExtras.entity";
     CreateProductController,
   ],
   providers: [
-    CreateProductService
+    CreateProductService,
   ],
   exports: [],
 })

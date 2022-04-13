@@ -4,6 +4,8 @@ import { TypeOrmModule } from "@nestjs/typeorm";
 import { Restaurants } from './entities/restaurants.entity';
 import { CreateRestaurantService } from './useCases/createRestaurant/createRestaurant.service';
 import { CreateRestaurantController } from './useCases/createRestaurant/createRestaurant.controller';
+import { ListRestaurantsService } from './useCases/listRestaurants/listRestaurants.service';
+import { ListRestaurantsController } from './useCases/listRestaurants/listRestaurants.controller';
 
 @Module({
   imports: [
@@ -11,10 +13,12 @@ import { CreateRestaurantController } from './useCases/createRestaurant/createRe
     TypeOrmModule.forFeature([Restaurants]),
   ],
   controllers: [
-    CreateRestaurantController
+    CreateRestaurantController,
+    ListRestaurantsController
   ],
   providers: [
-    CreateRestaurantService
+    CreateRestaurantService,
+    ListRestaurantsService
   ],
   exports: [],
 })
