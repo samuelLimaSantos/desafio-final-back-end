@@ -1,12 +1,14 @@
-import { Column, CreateDateColumn, Entity, JoinColumn, JoinTable, ManyToMany, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, JoinColumn, JoinTable, ManyToMany, ManyToOne, OneToMany, PrimaryColumn, UpdateDateColumn } from "typeorm";
+import { v4 as uuid } from 'uuid';
 import { Restaurants } from './../../restaurants/entities/restaurants.entity';
 import { Extras } from './extras.entity';
+import { ProductsExtras } from "./productsExtras.entity";
 
 @Entity('products')
 export class Products {
 
-  @PrimaryGeneratedColumn('uuid')
-  id: string;
+  @PrimaryColumn()
+  readonly id: string;
 
   @Column({ name: 'id_restaurant'})
   idRestaurant: string;
@@ -30,10 +32,10 @@ export class Products {
   updated_at: Date;
 
   @ManyToOne(() => Restaurants, restaurants => restaurants.products)
-  @JoinColumn()
+  @JoinColumn({ name: 'id_restaurant', referencedColumnName: 'id'})	
   restaurant: Restaurants;
 
-  @ManyToMany(() => Extras, extras => extras.products)
+  @ManyToMany(() => Extras, extras => extras.products, { cascade: true })
   @JoinTable({
     name: 'products_extras',
     joinColumn: {
@@ -46,4 +48,15 @@ export class Products {
     },
   })
   extras: Extras[];
+
+  @OneToMany(() => ProductsExtras, productsExtras => productsExtras.product, {
+    cascade: ['insert', 'update', 'remove', 'recover', 'soft-remove'],
+  })
+  productsExtras: ProductsExtras[];
+
+  constructor() {
+    if (!this.id) {
+      this.id = uuid();
+    }
+  }
 }

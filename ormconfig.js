@@ -6,6 +6,7 @@ module.exports = {
   password: process.env.DB_PASS,
   database: process.env.DB_NAME,
   migrations: [__dirname + '/src/shared/infra/migrations/**/*{.ts,.js}'],
+  entities: [__dirname + '/src/modules/**/*.entity{.ts,.js}'],
   migrationsRun: false,
   cli: {
     entitiesDir: 'src',

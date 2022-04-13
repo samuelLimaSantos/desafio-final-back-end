@@ -77,7 +77,7 @@ Vai retornar =>
 - Criar produto para um restaurante
 
 ```http
-  rest/products/:id
+  rest/products
 ```
 
 ```json
@@ -86,12 +86,13 @@ Vai retornar =>
   "urlImage": "string",
   "description": "string",
   "price": "number",
+  "idRestaurant": "string",
   "extras": [
     {
-      "id": 1
+      "id": "uuid"
     },
     {
-      "id": 2
+      "id": "uuid"
     }
   ]
 }

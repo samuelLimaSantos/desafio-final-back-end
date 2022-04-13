@@ -18,7 +18,7 @@ export class CreateExtrasTable1649797528619 implements MigrationInterface {
                 },
                 {
                     name: 'price',
-                    type: 'decimal',
+                    type: 'real',
                 },
                 {
                     name: 'created_at',

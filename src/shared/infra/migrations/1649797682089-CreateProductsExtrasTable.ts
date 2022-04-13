@@ -50,9 +50,6 @@ export class CreateProductsExtrasTable1649797682089 implements MigrationInterfac
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropForeignKey('products_extras', 'fk_products_extras_extras');
-        await queryRunner.dropForeignKey('products_extras', 'fk_products_extras_extras');
-
         await queryRunner.dropTable('products_extras');
     }
 

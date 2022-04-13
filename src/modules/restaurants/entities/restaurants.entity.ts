@@ -1,10 +1,11 @@
-import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, OneToMany, PrimaryColumn, UpdateDateColumn } from "typeorm";
+import { v4 as uuid } from 'uuid';
 import { Products } from './../../products/entities/products.entity';
 
 @Entity('restaurants')
 export class Restaurants {
-  @PrimaryGeneratedColumn('uuid')
-  id: string;
+  @PrimaryColumn()
+  readonly id: string;
 
   @Column()
   name: string;
@@ -32,4 +33,10 @@ export class Restaurants {
 
   @OneToMany(() => Products, products => products.restaurant)
   products: Products[];
+
+  constructor() {
+    if (!this.id) {
+      this.id = uuid();
+    }
+  }
 }
