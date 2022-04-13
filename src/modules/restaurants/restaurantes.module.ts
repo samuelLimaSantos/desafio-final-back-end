@@ -6,6 +6,8 @@ import { CreateRestaurantService } from './useCases/createRestaurant/createResta
 import { CreateRestaurantController } from './useCases/createRestaurant/createRestaurant.controller';
 import { ListRestaurantsService } from './useCases/listRestaurants/listRestaurants.service';
 import { ListRestaurantsController } from './useCases/listRestaurants/listRestaurants.controller';
+import { GetRestaurantDetailService } from './useCases/getRestaurantDetail/getRestaurantDetail.service';
+import { GetRestaurantDetailController } from './useCases/getRestaurantDetail/getRestaurantDetail.controller';
 
 @Module({
   imports: [
@@ -14,11 +16,13 @@ import { ListRestaurantsController } from './useCases/listRestaurants/listRestau
   ],
   controllers: [
     CreateRestaurantController,
-    ListRestaurantsController
+    ListRestaurantsController,
+    GetRestaurantDetailController,
   ],
   providers: [
     CreateRestaurantService,
-    ListRestaurantsService
+    ListRestaurantsService,
+    GetRestaurantDetailService
   ],
   exports: [],
 })
