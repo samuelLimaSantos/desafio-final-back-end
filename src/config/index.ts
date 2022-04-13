@@ -14,12 +14,6 @@ const configuration = () => ({
     synchronize: false,
     autoLoadEntities: true,
     migrationsTableName: 'migrations',
-    ssl: true,
-    extra: {
-      ssl: {
-        rejectUnauthorized: false
-      }
-    }
   } as TypeOrmModuleOptions
 })
 
