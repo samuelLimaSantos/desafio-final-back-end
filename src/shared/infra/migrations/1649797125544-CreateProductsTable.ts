@@ -18,7 +18,6 @@ export class CreateProductsTable1649797125544 implements MigrationInterface {
                 {
                     name: 'name',
                     type: 'varchar',
-                    isUnique: true
                 },
                 {
                     name: 'url_image',
@@ -30,7 +29,7 @@ export class CreateProductsTable1649797125544 implements MigrationInterface {
                 },
                 {
                     name: 'price',
-                    type: 'decimal',
+                    type: 'real',
                 },
                 {
                     name: 'created_at',
@@ -54,7 +53,6 @@ export class CreateProductsTable1649797125544 implements MigrationInterface {
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropForeignKey('products', 'fk_products_restaurants');
         await queryRunner.dropTable('products');
     }
 

@@ -1,6 +1,6 @@
 import { ApiProperty } from "@nestjs/swagger";
 import { Type } from "class-transformer";
-import { ArrayNotEmpty, IsArray, IsNotEmpty, IsNumber, IsString, IsUrl, ValidateNested } from "class-validator";
+import { ArrayNotEmpty, IsArray, IsNotEmpty, IsNumber, IsString, IsUrl, IsUUID, ValidateNested } from "class-validator";
 import { SimpleObjectTypeDto } from './../../../shared/dtos/simpleObjectType.dto';
 
 
@@ -19,7 +19,17 @@ export class CreateProductDto {
   @ApiProperty()
   @IsNumber()
   @IsNotEmpty()
-  price: string;
+  price: number;
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsUUID()
+  idRestaurant: string;
+
+  @ApiProperty()
+  @IsString()
+  @IsNotEmpty()
+  description: string;
 
   @ApiProperty({
     type: [SimpleObjectTypeDto],
@@ -31,5 +41,5 @@ export class CreateProductDto {
     each: true,
   })
   @Type(() => SimpleObjectTypeDto)
-  extras: Array<{ id: number }>;
+  extras: Array<{ id: string }>;
 }

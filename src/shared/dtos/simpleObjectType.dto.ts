@@ -1,9 +1,10 @@
+import { IsUUID } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
-import { IsInt, IsNotEmpty } from 'class-validator';
+import { IsNotEmpty } from 'class-validator';
 
 export class SimpleObjectTypeDto {
   @IsNotEmpty()
-  @IsInt()
+  @IsUUID()
   @ApiProperty()
-  id: number;
+  id: string;
 }

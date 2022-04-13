@@ -3,159 +3,95 @@ import { Extras } from './../../modules/products/entities/extras.entity';
 
 export const EXTRAS_OBJECT: DeepPartial<Extras[]> = [
   {
-    "price": 33.64,
-    "name": "Roberts"
+    "price": 3.64,
+    "name": "Cebola"
   },
   {
-    "price": 1.54,
-    "name": "Olga"
+    "price": 5.54,
+    "name": "Maionese Temperada"
   },
   {
-    "price": 65.61,
-    "name": "Deanne"
+    "price": 5.61,
+    "name": "Bacon"
   },
   {
-    "price": 11.84,
-    "name": "Hudson"
+    "price": 4.84,
+    "name": "Molho de Alho"
   },
   {
-    "price": 54.1,
-    "name": "Vincent"
+    "price": 6.15,
+    "name": "M&M"
   },
   {
-    "price": 76.15,
-    "name": "Logan"
+    "price": 2.15,
+    "name": "Chocoball"
   },
   {
-    "price": 12.55,
-    "name": "Bernard"
+    "price": 2.55,
+    "name": "Paçoca"
   },
   {
-    "price": 29.94,
-    "name": "Bradford"
+    "price": 1.94,
+    "name": "Calda de Leite Condensado"
   },
   {
-    "price": 94.49,
-    "name": "Johanna"
+    "price": 2.49,
+    "name": "Calda de Chocolate"
   },
   {
-    "price": 22.48,
-    "name": "Ginger"
+    "price": 2.48,
+    "name": "Farofa Temperada"
   },
   {
-    "price": 89.07,
-    "name": "Sonja"
+    "price": 3.07,
+    "name": "Molho de Pimenta"
   },
   {
-    "price": 87.71,
-    "name": "Mcneil"
+    "price": 3.71,
+    "name": "Molho Pesto"
   },
   {
     "price": 15.36,
-    "name": "Armstrong"
+    "name": "Creme de Leite Ninho"
   },
   {
-    "price": 23.33,
-    "name": "Saundra"
+    "price": 5.33,
+    "name": "Granola de Banana"
   },
   {
-    "price": 10.85,
-    "name": "Casandra"
+    "price": 6.85,
+    "name": "Granola Light"
   },
   {
-    "price": 84.99,
-    "name": "Santana"
+    "price": 4.99,
+    "name": "Morango"
   },
   {
-    "price": 77.49,
-    "name": "Hicks"
+    "price": 2.49,
+    "name": "Calda de Morango"
   },
   {
-    "price": 10.6,
-    "name": "Abbott"
+    "price": 1.99,
+    "name": "Jujuba"
   },
   {
-    "price": 60.63,
-    "name": "Moses"
+    "price": 9.63,
+    "name": "Nozes"
   },
   {
-    "price": 52.88,
-    "name": "Miranda"
+    "price": 5.88,
+    "name": "Castanha do Pará"
   },
   {
-    "price": 91.9,
-    "name": "Liz"
+    "price": 9.99,
+    "name": "Mix de Castanha"
   },
   {
-    "price": 21.48,
-    "name": "Hattie"
+    "price": 2.48,
+    "name": "Farinha de Amendoim"
   },
   {
-    "price": 24.58,
-    "name": "Benita"
-  },
-  {
-    "price": 71.04,
-    "name": "Spencer"
-  },
-  {
-    "price": 82.14,
-    "name": "Melanie"
-  },
-  {
-    "price": 9.79,
-    "name": "Ann"
-  },
-  {
-    "price": 79.82,
-    "name": "Hoover"
-  },
-  {
-    "price": 6.7,
-    "name": "Gloria"
-  },
-  {
-    "price": 67.27,
-    "name": "Alexandra"
-  },
-  {
-    "price": 82.71,
-    "name": "Vega"
-  },
-  {
-    "price": 31.33,
-    "name": "Ivy"
-  },
-  {
-    "price": 4.77,
-    "name": "Wilkins"
-  },
-  {
-    "price": 60.11,
-    "name": "Ellen"
-  },
-  {
-    "price": 14.95,
-    "name": "Golden"
-  },
-  {
-    "price": 33.07,
-    "name": "Danielle"
-  },
-  {
-    "price": 66.14,
-    "name": "Eleanor"
-  },
-  {
-    "price": 45.14,
-    "name": "Griffith"
-  },
-  {
-    "price": 27.04,
-    "name": "Drake"
-  },
-  {
-    "price": 95.54,
-    "name": "Jensen"
+    "price": 2.58,
+    "name": "Calda de Nutella"
   },
 ]
