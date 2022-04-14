@@ -29,7 +29,7 @@ export class GetRestaurantDetailService {
         'extras.name',
         'extras.price',
       ])
-      .innerJoin('restaurant.products', 'products')
+      .leftJoin('restaurant.products', 'products')
       .leftJoin('products.extras', 'extras')
       .where('restaurant.id = :restaurantId', { restaurantId })
       .getOne();
