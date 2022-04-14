@@ -25,6 +25,7 @@ export class GetRestaurantDetailService {
         'products.name',
         'products.urlImage',
         'products.description',
+        'products.price',
         'extras.id',
         'extras.name',
         'extras.price',
