@@ -36,7 +36,6 @@ export class CreateProductDto {
   })
   @IsNotEmpty()
   @IsArray()
-  @ArrayNotEmpty()
   @ValidateNested({
     each: true,
   })
